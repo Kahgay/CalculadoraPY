@@ -16,5 +16,6 @@ python3 calc.py
 apt-get install python3
 apt-get install git
 git clone https://github.com/Kahgay/CalculadoraPY.git
+cd CalculadoraPY
 python3 calc.py
 ```
