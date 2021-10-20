@@ -10,7 +10,7 @@ cd CalculadoraPY
 python3 calc.py
 ```
 
-## Usando no Debian/Ubuntu Linux
+## Usando no Linux
 
 ```
 sudo apt-get install python3
@@ -22,5 +22,3 @@ cd CalculadoraPY
 python3 calc.py
 ```
 > Se você não tem Ubuntu Server UTF-8 o código não vai funcionar
-
-
