@@ -1,6 +1,6 @@
 # CalculadoraPY
 
-## Usando no termux
+## Usando no Termux
 
 ```
 apt install python3
@@ -10,7 +10,7 @@ cd CalculadoraPY
 python3 calc.py
 ```
 
-## Usando no Linux
+## Usando no Debian/Ubuntu Linux
 
 ```
 apt-get install python3
