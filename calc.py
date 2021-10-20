@@ -18,13 +18,13 @@ def calculando():
    time.sleep(1)
    
 def versao():
-  cprint('.************************************************.', 'cyan')
-  cprint('| [+]Criado por KahGay                           |', 'cyan')
-  cprint('| [+] Versão: 0.0.5                              |', 'cyan')
-  cprint('|                                                |', 'cyan')
-  cprint('|                                                |', 'cyan')
-  cprint('|                                                |', 'cyan')
-  cprint("'------------------------------------------------'", 'cyan')
+  cprint('.************************************************.', 'cyan', attrs=['bold'])
+  cprint('| [+]Criado por KahGay                           |', 'cyan', attrs=['bold'])
+  cprint('| [+] Versão: 0.0.5                              |', 'cyan', attrs=['bold'])
+  cprint('|                                                |', 'cyan', attrs=['bold'])
+  cprint('|                                                |', 'cyan', attrs=['bold'])
+  cprint('|                                                |', 'cyan', attrs=['bold'])
+  cprint("'************************************************'", 'cyan', attrs=['bold'])
   
 
 def inicio():
