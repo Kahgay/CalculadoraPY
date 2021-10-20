@@ -23,8 +23,4 @@ python3 calc.py
 ```
 > Se você não tem Ubuntu Server UTF-8 o código não vai funcionar
 
-## Perguntas
 
-**Porque tem [ON] ou [OFF] do lado das opções?**
-
-É uma forma de dizer que está funcionando ou não, em breve mudarei para "funcionando", "ainda não funcionando" e "não funcionando"
