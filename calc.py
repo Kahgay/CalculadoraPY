@@ -2,6 +2,7 @@ import time
 from decimal import *
 import sys
 from termcolor import colored, cprint 
+from importlib import reload
 versao_atual = str(sys.version[0] + sys.version[1] + sys.version[2])
 
 if Decimal(versao_atual) < 3.7:
