@@ -3,11 +3,11 @@ from decimal import *
 import sys
 from termcolor import colored, cprint 
 from importlib import reload
-versao_atual = str(sys.version[0] + sys.version[1] + sys.version[2])
 
-if Decimal(versao_atual) < 3.7:
-    reload(sys)
-    sys.setdefaultencoding("utf-8")
+
+if int(sys.version[0]) < 3:
+   reload(sys)
+   sys.setdefaultencoding("utf-8")
   
 
 def calculando():
@@ -27,7 +27,7 @@ def calculando():
 def versao():
   cprint('.************************************************.', 'cyan', attrs=['bold'])
   cprint('| [+] Criado por KahGay                          |', 'cyan', attrs=['bold'])
-  cprint('| [+] Versão 0.0.5                              |', 'cyan', attrs=['bold'])
+  cprint('| [+] Versão 0.0.5                               |', 'cyan', attrs=['bold'])
   cprint('|                                                |', 'cyan', attrs=['bold'])
   cprint('|                                                |', 'cyan', attrs=['bold'])
   cprint('|                                                |', 'cyan', attrs=['bold'])
