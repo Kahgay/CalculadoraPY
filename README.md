@@ -13,12 +13,15 @@ python3 calc.py
 ## Usando no Debian/Ubuntu Linux
 
 ```
-apt-get install python3
-apt-get install git
+sudo apt-get install python3
+sudo apt-get install git
+sudo apt-get install python3-pip
+sudo pip install termcolor
 git clone https://github.com/Kahgay/CalculadoraPY.git
 cd CalculadoraPY
 python3 calc.py
 ```
+> Se você não tem Ubuntu Server UTF-8 o código não vai funcionar
 
 ## Perguntas
 
