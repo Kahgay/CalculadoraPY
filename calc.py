@@ -3,7 +3,6 @@ from decimal import *
 import sys
 from termcolor import colored, cprint 
 
-
 def calculando():
   time.sleep(1)
   for pontos in range(1, 5):
@@ -17,8 +16,21 @@ def calculando():
     
    print(palavra + caractere, end='\r')
    time.sleep(1)
+   
+def versao():
+  cprint('.************************************************.', 'cyan')
+  cprint('| [+]Criado por KahGay                           |', 'cyan')
+  cprint('| [+] Versão: 0.0.5                              |', 'cyan')
+  cprint('|                                                |', 'cyan')
+  cprint('|                                                |', 'cyan')
+  cprint('|                                                |', 'cyan')
+  cprint("'------------------------------------------------'", 'cyan')
   
-  
+
+def inicio():
+  cprint('\n[AVISO] Esse projeto NÃO TEM 100% de certeza, estudem que é melhor, não use esse projeto pensando que vai gabaritar na prova, o projeto foi criado para ser algo muito menos sério do que vestibular, prova, simulado. Se estiver fazendo um agora, boa sorte!', 'yellow', attrs=['bold'], file=sys.stderr)
+  cprint('[!] A responsabilidade é toda sua, se ir mal em um simulado, prova, vestibular, a culpa não irá ser do projeto, estudem que é melhor :)\n\n', 'red', attrs=['bold'], file=sys.stderr)
+  cprint('[1] 2 números [FUNCIONANDO] \n[2] 3 números [FUNCIONANDO] \n[11] Potência [FUNCIONANDO] \n[12] Raiz Quadrada e Cúbica [FUNCIONANDO]\n[13] Descobrir o raio [FUNCIONANDO]\n[14] Circunferência (Círculo) [FUNCIONANDO]\n[15] Diâmetro [FUNCIONANDO]\n[16] Conversor de medida [AINDA NÃO FUNCIONANDO]\n[exit] exit\n[wiki] Wiki (ajuda)\n\n\n', 'white', attrs=['bold'], file=sys.stderr)
 
 class colors: 
   HEADER = '\033[95m' 
@@ -30,15 +42,14 @@ class colors:
   ENDC = '\033[0m' 
   BOLD = '\033[1m' 
   UNDERLINE = '\033[4m'
-cprint('\n[AVISO] Esse projeto NÃO TEM 100% de certeza, estudem que é melhor, não use esse projeto pensando que vai gabaritar na prova, o projeto foi criado para ser algo muito menos sério do que vestibular, prova, simulado. Se estiver fazendo um agora, boa sorte!', 'yellow', attrs=['bold'], file=sys.stderr)
-cprint('[!] A responsabilidade é toda sua, se ir mal em um simulado, prova, vestibular, a culpa não irá ser do projeto, estudem que é melhor :)\n\n', 'red', attrs=['bold'], file=sys.stderr)
-cprint('[1] 2 números [ON] \n[2] 3 números [ON] \n[11] Potência [ON] \n[12] Raiz Quadrada e Cúbica [ON]\n[13] Descobrir o raio [ON]\n[14] Circunferência (Círculo) [ON]\n[exit] exit\n\n\n', 'white', attrs=['bold'], file=sys.stderr)
+versao()
+inicio()
 
-escolha = input('Selecione a opção: ')
+escolha = input('Selecione a opção: ').lower()
 
-while len(escolha) < 0 or escolha == "" or escolha != '1' and escolha != '2' and escolha != 'exit' and escolha != '11' and escolha != '12' and escolha != '13' and escolha != '14':
+while len(escolha) < 0 or escolha == "" or escolha != '1' and escolha != '2' and escolha != 'exit' and escolha != '11' and escolha != '12' and escolha != '13' and escolha != '14' and escolha != '15' and escolha != '16' and escolha != 'wiki':
   print('Opção inválida')
-  escolha = input('Selecione a opção: ')
+  escolha = input('Selecione a opção: ').lower()
   
 if escolha == '1':
 
@@ -267,3 +278,428 @@ if escolha == '14':
   total = 2 * Decimal(pi) * Decimal(raio)
   
   print('2 *', pi + ' *', raio, '=', str(total))
+if escolha == '15':
+  raio = input('Coloque o valor do raio: ')
+  
+  while len(raio) < 0:
+    print('Valor do raio é inválido')
+    raio = input('Coloque o valor do raio: ')
+  
+  print(raio, '* 2 = ?')
+  
+  calculando()
+  time.sleep(1)
+  print('Pronto       ')
+  
+  total = Decimal(raio) * 2
+  print(raio, '* 2 =', total)
+
+if escolha == '16':
+   medida = input('Escolha a medida que você deseja [Comprimento/Capacidade/Massa]: ').lower()
+  
+   while len(medida) < 0 or medida != 'comprimento' and medida != 'capacidade' and medida != 'massa':
+     medida = input('Escolha a medida que você deseja [Comprimento/Capacidade/Massa]: ').lower()
+  
+   if medida == 'comprimento':
+     comprimentos = input('Escolha o comprimento que queira converter [mm/cm/dm/m/dam/hm/km]: ').lower()
+     while len(comprimentos) < 0 or comprimentos != 'mm' and comprimentos != 'cm' and comprimentos != 'dm' and comprimentos != 'm' and comprimentos != 'dam' and comprimentos != 'hm' and comprimentos != 'km':
+       comprimentos = input('Escolha o comprimento [mm/cm/dm/m/dam/hm/km]: ').lower()
+    
+     comprimentos2 = input('para [mm/cm/dm/m/dam/hm/km]: ').lower()
+     while len(comprimentos2) < 0 or comprimentos2 != 'mm' and comprimentos2 != 'cm' and comprimentos2 != 'dm' and comprimentos2 != 'm' and comprimentos2 != 'dam' and comprimentos2 != 'hm' and comprimentos2 != 'km':
+       comprimentos2 = input('para [mm/cm/dm/m/dam/hm/km]: ').lower()
+    
+     quantidade1 = input('Coloque o número: ')
+    
+     while len(quantidade1) < 0:
+       quantidade1 = input('Coloque o número: ')
+    
+    
+     print(quantidade1 + comprimentos, 'para', comprimentos2, '= ?')
+    
+     calculando()
+     time.sleep(1)
+     print('Pronto       ')
+  
+     # Possibilidades com "mm"
+     if comprimentos == comprimentos2:
+       total = Decimal(quantidade1 + comprimentos)
+     if comprimentos == 'mm':
+      # Multiplicando
+      if comprimentos2 == 'cm':
+        total = Decimal(quantidade1) * 10
+      if comprimentos2 == 'dm':
+        total = Decimal(quantidade1) * 100
+      if comprimentos2 == 'm':
+        total = Decimal(quantidade1) * 1000
+      if comprimentos2 == 'dam':
+        total = Decimal(quantidade1) * 10000
+      if comprimentos2 == 'hm':
+        total = Decimal(quantidade1) * 100000
+      if comprimentos2 == 'km':
+        total = Decimal(quantidade1) * 1000000
+    # Possibilidades com 'cm'
+     if comprimentos == 'cm':
+      # Dividindo
+        if comprimentos2 == 'mm':
+         total = Decimal(quantidade1) / 10
+      # Multiplicando
+        if comprimentos2 == 'dm':
+         total = Decimal(quantidade1) * 10
+        if comprimentos2 == 'm':
+         total = Decimal(quantidade1) * 100
+        if comprimentos2 == 'dam':
+         total = Decimal(quantidade1) * 1000
+        if comprimentos2 == 'hm':
+         total = Decimal(quantidade1) * 10000
+        if comprimentos2 == 'km':
+         total = Decimal(quantidade1) * 100000
+      # Possibilidades com 'dm'
+     if comprimentos == 'dm':
+      # Dividindo
+       if comprimentos2 == 'mm':
+        total = Decimal(quantidade1) / 100
+       if comprimentos2 == 'cm':
+        total = Decimal(quantidade1) / 10
+      # Multiplicando
+       if comprimentos2 == 'm':
+        total = Decimal(quantidade1) * 10
+       if comprimentos2 == 'dam':
+        total = Decimal(quantidade1) * 100
+       if comprimentos2 == 'hm':
+        total = Decimal(quantidade1) * 1000
+       if comprimentos2 == 'km':
+        total = Decimal(quantidade1) * 10000
+      # Possibilidades com 'm'
+     if comprimentos == 'm':
+      # Dividindo
+       if comprimentos2 == 'mm':
+        total = Decimal(quantidade1) / 1000
+       if comprimentos2 == 'cm':
+        total = Decimal(quantidade1) / 100
+        if comprimentos2 == 'dm':
+          total = Decimal(quantidade1) / 10
+      # Multiplicando
+       if comprimentos2 == 'dam':
+        total = Decimal(quantidade1) * 10
+       if comprimentos2 == 'hm':
+        total = Decimal(quantidade1) * 100
+       if comprimentos2 == 'km':
+        total = Decimal(quantidade1) * 1000
+     # Possibilidades com 'dan'
+     if comprimentos == 'dam':
+       # Dividindo
+       if comprimentos2 == 'mm':
+        total = Decimal(quantidade1) / 10000
+       if comprimentos2 == 'cm':
+        total = Decimal(quantidade1) / 1000
+       if comprimentos2 == 'dm':
+          total = Decimal(quantidade1) / 100
+       if comprimentos2 == 'm':
+          total = Decimal(quantidade1) / 10
+      # Multiplicando
+       if comprimentos2 == 'hm':
+        total = Decimal(quantidade1) * 10
+       if comprimentos2 == 'km':
+        total = Decimal(quantidade1) * 100
+     # Possibilidades com 'hm'
+     if comprimentos == 'hm':
+       # Dividindo
+       if comprimentos2 == 'mm':
+        total = Decimal(quantidade1) / 100000
+       if comprimentos2 == 'cm':
+        total = Decimal(quantidade1) / 10000
+       if comprimentos2 == 'dm':
+          total = Decimal(quantidade1) / 1000
+       if comprimentos2 == 'm':
+          total = Decimal(quantidade1) / 100
+       if comprimentos2 == 'hm':
+        total = Decimal(quantidade1) / 10
+      # Multiplicando
+       if comprimentos2 == 'km':
+        total = Decimal(quantidade1) * 10
+     # Possibilidades com 'km'
+     if comprimentos == 'km':
+       # Dividindo
+       if comprimentos2 == 'mm':
+        total = Decimal(quantidade1) / 100000
+       if comprimentos2 == 'cm':
+        total = Decimal(quantidade1) / 10000
+       if comprimentos2 == 'dm':
+          total = Decimal(quantidade1) / 1000
+       if comprimentos2 == 'm':
+          total = Decimal(quantidade1) / 100
+       if comprimentos2 == 'hm':
+        total = Decimal(quantidade1) / 10
+      
+     print(quantidade1 + comprimentos, 'para', comprimentos2, '=', str(total) + str(comprimentos))
+     
+   if medida == 'capacidade':
+     comprimentos = input('Escolha o comprimento que queira converter [ml/cl/dl/l/dal/hl/kl]: ').lower()
+     while len(comprimentos) < 0 or comprimentos != 'ml' and comprimentos != 'cl' and comprimentos != 'dl' and comprimentos != 'l' and comprimentos != 'dal' and comprimentos != 'hl' and comprimentos != 'kl':
+       comprimentos = input('Escolha o comprimento [ml/cl/dl/l/dal/hl/kl]: ').lower()
+    
+     comprimentos2 = input('para [ml/cl/dl/l/dal/hl/kl]: ').lower()
+     while len(comprimentos2) < 0 or comprimentos2 != 'ml' and comprimentos2 != 'cl' and comprimentos2 != 'dl' and comprimentos2 != 'l' and comprimentos2 != 'dal' and comprimentos2 != 'hl' and comprimentos2 != 'kl':
+       comprimentos2 = input('para [ml/cl/dl/l/dal/hl/kl]: ').lower()
+    
+     quantidade1 = input('Coloque o número: ')
+    
+     while len(quantidade1) < 0:
+       quantidade1 = input('Coloque o número: ')
+    
+    
+     print(quantidade1 + comprimentos, 'para', comprimentos2, '= ?')
+    
+     calculando()
+     time.sleep(1)
+     print('Pronto       ')
+  
+     # Possibilidades com "mm"
+     if comprimentos == comprimentos2:
+       total = Decimal(quantidade1 + comprimentos)
+     if comprimentos == 'ml':
+      # Multiplicando
+      if comprimentos2 == 'cl':
+        total = Decimal(quantidade1) * 10
+      if comprimentos2 == 'dl':
+        total = Decimal(quantidade1) * 100
+      if comprimentos2 == 'l':
+        total = Decimal(quantidade1) * 1000
+      if comprimentos2 == 'dal':
+        total = Decimal(quantidade1) * 10000
+      if comprimentos2 == 'hl':
+        total = Decimal(quantidade1) * 100000
+      if comprimentos2 == 'kl':
+        total = Decimal(quantidade1) * 1000000
+    # Possibilidades com 'cm'
+     if comprimentos == 'cl':
+      # Dividindo
+        if comprimentos2 == 'ml':
+         total = Decimal(quantidade1) / 10
+      # Multiplicando
+        if comprimentos2 == 'dl':
+         total = Decimal(quantidade1) * 10
+        if comprimentos2 == 'l':
+         total = Decimal(quantidade1) * 100
+        if comprimentos2 == 'dal':
+         total = Decimal(quantidade1) * 1000
+        if comprimentos2 == 'hl':
+         total = Decimal(quantidade1) * 10000
+        if comprimentos2 == 'kl':
+         total = Decimal(quantidade1) * 100000
+      # Possibilidades com 'dm'
+     if comprimentos == 'dl':
+      # Dividindo
+       if comprimentos2 == 'ml':
+        total = Decimal(quantidade1) / 100
+       if comprimentos2 == 'cl':
+        total = Decimal(quantidade1) / 10
+      # Multiplicando
+       if comprimentos2 == 'l':
+        total = Decimal(quantidade1) * 10
+       if comprimentos2 == 'dal':
+        total = Decimal(quantidade1) * 100
+       if comprimentos2 == 'hl':
+        total = Decimal(quantidade1) * 1000
+       if comprimentos2 == 'kl':
+        total = Decimal(quantidade1) * 10000
+      # Possibilidades com 'm'
+     if comprimentos == 'l':
+      # Dividindo
+       if comprimentos2 == 'ml':
+        total = Decimal(quantidade1) / 1000
+       if comprimentos2 == 'cl':
+        total = Decimal(quantidade1) / 100
+        if comprimentos2 == 'dl':
+          total = Decimal(quantidade1) / 10
+      # Multiplicando
+       if comprimentos2 == 'dal':
+        total = Decimal(quantidade1) * 10
+       if comprimentos2 == 'hl':
+        total = Decimal(quantidade1) * 100
+       if comprimentos2 == 'kl':
+        total = Decimal(quantidade1) * 1000
+     # Possibilidades com 'dan'
+     if comprimentos == 'dal':
+       # Dividindo
+       if comprimentos2 == 'ml':
+        total = Decimal(quantidade1) / 10000
+       if comprimentos2 == 'cl':
+        total = Decimal(quantidade1) / 1000
+       if comprimentos2 == 'dl':
+          total = Decimal(quantidade1) / 100
+       if comprimentos2 == 'l':
+          total = Decimal(quantidade1) / 10
+      # Multiplicando
+       if comprimentos2 == 'hl':
+        total = Decimal(quantidade1) * 10
+       if comprimentos2 == 'kl':
+        total = Decimal(quantidade1) * 100
+     # Possibilidades com 'hm'
+     if comprimentos == 'hl':
+       # Dividindo
+       if comprimentos2 == 'ml':
+        total = Decimal(quantidade1) / 100000
+       if comprimentos2 == 'cl':
+        total = Decimal(quantidade1) / 10000
+       if comprimentos2 == 'dl':
+          total = Decimal(quantidade1) / 1000
+       if comprimentos2 == 'l':
+          total = Decimal(quantidade1) / 100
+       if comprimentos2 == 'hl':
+        total = Decimal(quantidade1) / 10
+      # Multiplicando
+       if comprimentos2 == 'kl':
+        total = Decimal(quantidade1) * 10
+     # Possibilidades com 'km'
+     if comprimentos == 'kl':
+       # Dividindo
+       if comprimentos2 == 'ml':
+        total = Decimal(quantidade1) / 100000
+       if comprimentos2 == 'cl':
+        total = Decimal(quantidade1) / 10000
+       if comprimentos2 == 'dl':
+          total = Decimal(quantidade1) / 1000
+       if comprimentos2 == 'l':
+          total = Decimal(quantidade1) / 100
+       if comprimentos2 == 'hl':
+        total = Decimal(quantidade1) / 10
+      
+     print(quantidade1 + comprimentos, 'para', comprimentos2, '=', str(total) + str(comprimentos))
+  
+   if medida == 'massa':
+     comprimentos = input('Escolha o comprimento que queira converter [mg/cg/dg/g/dag/hg/kg]: ').lower()
+     while len(comprimentos) < 0 or comprimentos != 'mg' and comprimentos != 'cg' and comprimentos != 'dg' and comprimentos != 'g' and comprimentos != 'dag' and comprimentos != 'hg' and comprimentos != 'kg':
+       comprimentos = input('Escolha o comprimento [mg/cg/dg/g/dag/hg/kg]: ').lower()
+    
+     comprimentos2 = input('para [mg/cg/dg/g/dag/hg/kg]: ').lower()
+     while len(comprimentos2) < 0 or comprimentos2 != 'mg' and comprimentos2 != 'cg' and comprimentos2 != 'dg' and comprimentos2 != 'g' and comprimentos2 != 'dag' and comprimentos2 != 'hg' and comprimentos2 != 'kg':
+       comprimentos2 = input('para [mg/cg/dg/g/dag/hg/kg]: ').lower()
+    
+     quantidade1 = input('Coloque o número: ')
+    
+     while len(quantidade1) < 0:
+       quantidade1 = input('Coloque o número: ')
+    
+    
+     print(quantidade1 + comprimentos, 'para', comprimentos2, '= ?')
+    
+     calculando()
+     time.sleep(1)
+     print('Pronto       ')
+  
+     # Possibilidades com "mm"
+     if comprimentos == comprimentos2:
+       total = Decimal(quantidade1 + comprimentos)
+     if comprimentos == 'mg':
+      # Multiplicando
+      if comprimentos2 == 'cg':
+        total = Decimal(quantidade1) * 10
+      if comprimentos2 == 'dg':
+        total = Decimal(quantidade1) * 100
+      if comprimentos2 == 'g':
+        total = Decimal(quantidade1) * 1000
+      if comprimentos2 == 'dag':
+        total = Decimal(quantidade1) * 10000
+      if comprimentos2 == 'hg':
+        total = Decimal(quantidade1) * 100000
+      if comprimentos2 == 'kg':
+        total = Decimal(quantidade1) * 1000000
+    # Possibilidades com 'cm'
+     if comprimentos == 'cg':
+      # Dividindo
+        if comprimentos2 == 'mg':
+         total = Decimal(quantidade1) / 10
+      # Multiplicando
+        if comprimentos2 == 'dg':
+         total = Decimal(quantidade1) * 10
+        if comprimentos2 == 'g':
+         total = Decimal(quantidade1) * 100
+        if comprimentos2 == 'dag':
+         total = Decimal(quantidade1) * 1000
+        if comprimentos2 == 'hg':
+         total = Decimal(quantidade1) * 10000
+        if comprimentos2 == 'kg':
+         total = Decimal(quantidade1) * 100000
+      # Possibilidades com 'dm'
+     if comprimentos == 'dg':
+      # Dividindo
+       if comprimentos2 == 'mg':
+        total = Decimal(quantidade1) / 100
+       if comprimentos2 == 'cg':
+        total = Decimal(quantidade1) / 10
+      # Multiplicando
+       if comprimentos2 == 'g':
+        total = Decimal(quantidade1) * 10
+       if comprimentos2 == 'dag':
+        total = Decimal(quantidade1) * 100
+       if comprimentos2 == 'hg':
+        total = Decimal(quantidade1) * 1000
+       if comprimentos2 == 'kg':
+        total = Decimal(quantidade1) * 10000
+      # Possibilidades com 'm'
+     if comprimentos == 'g':
+      # Dividindo
+       if comprimentos2 == 'mg':
+        total = Decimal(quantidade1) / 1000
+       if comprimentos2 == 'cg':
+        total = Decimal(quantidade1) / 100
+        if comprimentos2 == 'dg':
+          total = Decimal(quantidade1) / 10
+      # Multiplicando
+       if comprimentos2 == 'dag':
+        total = Decimal(quantidade1) * 10
+       if comprimentos2 == 'hg':
+        total = Decimal(quantidade1) * 100
+       if comprimentos2 == 'kg':
+        total = Decimal(quantidade1) * 1000
+     # Possibilidades com 'dan'
+     if comprimentos == 'dag':
+       # Dividindo
+       if comprimentos2 == 'mg':
+        total = Decimal(quantidade1) / 10000
+       if comprimentos2 == 'cg':
+        total = Decimal(quantidade1) / 1000
+       if comprimentos2 == 'dg':
+          total = Decimal(quantidade1) / 100
+       if comprimentos2 == 'g':
+          total = Decimal(quantidade1) / 10
+      # Multiplicando
+       if comprimentos2 == 'hg':
+        total = Decimal(quantidade1) * 10
+       if comprimentos2 == 'kg':
+        total = Decimal(quantidade1) * 100
+     # Possibilidades com 'hm'
+     if comprimentos == 'hg':
+       # Dividindo
+       if comprimentos2 == 'mg':
+        total = Decimal(quantidade1) / 100000
+       if comprimentos2 == 'cg':
+        total = Decimal(quantidade1) / 10000
+       if comprimentos2 == 'dg':
+          total = Decimal(quantidade1) / 1000
+       if comprimentos2 == 'g':
+          total = Decimal(quantidade1) / 100
+       if comprimentos2 == 'hg':
+        total = Decimal(quantidade1) / 10
+      # Multiplicando
+       if comprimentos2 == 'kg':
+        total = Decimal(quantidade1) * 10
+     # Possibilidades com 'km'
+     if comprimentos == 'kg':
+       # Dividindo
+       if comprimentos2 == 'mg':
+        total = Decimal(quantidade1) / 100000
+       if comprimentos2 == 'cg':
+        total = Decimal(quantidade1) / 10000
+       if comprimentos2 == 'dg':
+          total = Decimal(quantidade1) / 1000
+       if comprimentos2 == 'g':
+          total = Decimal(quantidade1) / 100
+       if comprimentos2 == 'hg':
+        total = Decimal(quantidade1) / 10
+      
+     print(quantidade1 + comprimentos, 'para', comprimentos2, '=', str(total) + str(comprimentos))
+if escolha == 'wiki':
+  cprint('WIKI: \n\nConversor de medidas\nSobre a questão da vírgula eu não sei fazer isso em python ainda, mas a vírgula pela quantidade de casas depois da vírgula, exemplo: 190.5 -> 19,50\n\nPotência\n número elevado a tal número será multiplicado o número que colocou vezes número da potência, exemplo: 3^(5) = 3 x 3 = 9 x 3 = 27 x 3 = 81 x 3 = 243\n\n', 'white', attrs=['bold'])
