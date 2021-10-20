@@ -30,7 +30,7 @@ def versao():
 def inicio():
   cprint('\n[AVISO] Esse projeto NÃO TEM 100% de certeza, estudem que é melhor, não use esse projeto pensando que vai gabaritar na prova, o projeto foi criado para ser algo muito menos sério do que vestibular, prova, simulado. Se estiver fazendo um agora, boa sorte!', 'yellow', attrs=['bold'], file=sys.stderr)
   cprint('[!] A responsabilidade é toda sua, se ir mal em um simulado, prova, vestibular, a culpa não irá ser do projeto, estudem que é melhor :)\n\n', 'red', attrs=['bold'], file=sys.stderr)
-  cprint('[1] 2 números [FUNCIONANDO] \n[2] 3 números [FUNCIONANDO] \n[11] Potência [FUNCIONANDO] \n[12] Raiz Quadrada e Cúbica [FUNCIONANDO]\n[13] Descobrir o raio [FUNCIONANDO]\n[14] Circunferência (Círculo) [FUNCIONANDO]\n[15] Diâmetro [FUNCIONANDO]\n[16] Conversor de medida [FUNCIONANDO]\n[exit] exit\n[wiki] Wiki (ajuda)\n\n\n', 'white', attrs=['bold'], file=sys.stderr)
+  print('[1] 2 números [FUNCIONANDO] \n[2] 3 números [FUNCIONANDO] \n[11] Potência [FUNCIONANDO] \n[12] Raiz Quadrada e Cúbica [FUNCIONANDO]\n[13] Descobrir o raio [FUNCIONANDO]\n[14] Circunferência (Círculo) [FUNCIONANDO]\n[15] Diâmetro [FUNCIONANDO]\n[16] Conversor de medida [FUNCIONANDO]\n[exit] exit\n[wiki] Wiki (ajuda)\n\n\n')
 
 class colors: 
   HEADER = '\033[95m' 
