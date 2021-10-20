@@ -2,6 +2,12 @@ import time
 from decimal import *
 import sys
 from termcolor import colored, cprint 
+versao_atual = str(sys.version[0] + sys.version[1] + sys.version[2])
+
+if Decimal(versao_atual) < 3.7:
+    reload(sys)
+    sys.setdefaultencoding("utf-8")
+  
 
 def calculando():
   time.sleep(1)
@@ -20,7 +26,7 @@ def calculando():
 def versao():
   cprint('.************************************************.', 'cyan', attrs=['bold'])
   cprint('| [+] Criado por KahGay                          |', 'cyan', attrs=['bold'])
-  cprint('| [+] Version: 0.0.5                              |', 'cyan', attrs=['bold'])
+  cprint('| [+] Versão 0.0.5                              |', 'cyan', attrs=['bold'])
   cprint('|                                                |', 'cyan', attrs=['bold'])
   cprint('|                                                |', 'cyan', attrs=['bold'])
   cprint('|                                                |', 'cyan', attrs=['bold'])
@@ -30,7 +36,7 @@ def versao():
 def inicio():
   cprint('\n[AVISO] Esse projeto NÃO TEM 100% de certeza, estudem que é melhor, não use esse projeto pensando que vai gabaritar na prova, o projeto foi criado para ser algo muito menos sério do que vestibular, prova, simulado. Se estiver fazendo um agora, boa sorte!', 'yellow', attrs=['bold'], file=sys.stderr)
   cprint('[!] A responsabilidade é toda sua, se ir mal em um simulado, prova, vestibular, a culpa não irá ser do projeto, estudem que é melhor :)\n\n', 'red', attrs=['bold'], file=sys.stderr)
-  print('[1] 2 números [FUNCIONANDO] \n[2] 3 números [FUNCIONANDO] \n[11] Potência [FUNCIONANDO] \n[12] Raiz Quadrada e Cúbica [FUNCIONANDO]\n[13] Descobrir o raio [FUNCIONANDO]\n[14] Circunferência (Círculo) [FUNCIONANDO]\n[15] Diâmetro [FUNCIONANDO]\n[16] Conversor de medida [FUNCIONANDO]\n[exit] exit\n[wiki] Wiki (ajuda)\n\n\n')
+  cprint('[1] 2 números [FUNCIONANDO] \n[2] 3 números [FUNCIONANDO] \n[11] Potência [FUNCIONANDO] \n[12] Raiz Quadrada e Cúbica [FUNCIONANDO]\n[13] Descobrir o raio [FUNCIONANDO]\n[14] Circunferência (Círculo) [FUNCIONANDO]\n[15] Diâmetro [FUNCIONANDO]\n[16] Conversor de medida [FUNCIONANDO]\n[exit] exit\n[wiki] Wiki (ajuda)\n\n\n', 'white', attrs=['bold'], file=sys.stderr)
 
 class colors: 
   HEADER = '\033[95m' 
