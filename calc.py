@@ -20,7 +20,7 @@ def calculando():
 def versao():
   cprint('.************************************************.', 'cyan', attrs=['bold'])
   cprint('| [+] Criado por KahGay                          |', 'cyan', attrs=['bold'])
-  cprint('| [+] Versão: 0.0.5                              |', 'cyan', attrs=['bold'])
+  cprint('| [+] Version: 0.0.5                              |', 'cyan', attrs=['bold'])
   cprint('|                                                |', 'cyan', attrs=['bold'])
   cprint('|                                                |', 'cyan', attrs=['bold'])
   cprint('|                                                |', 'cyan', attrs=['bold'])
