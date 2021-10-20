@@ -192,7 +192,7 @@ if escolha == '11':
    print('Pronto       ')
  
    try:
-     total = potencianum ** potencia
+     total = Decimal(potencianum) ** Decimal(potencia)
      print(str(potencianum) + '^(' + str(potencia) + ') =', str(total))
    except ValueError as err:
      print(colors.FAIL + 'Algo deu muito errado, o erro foi: ', err)
@@ -214,9 +214,10 @@ if escolha == '12':
      calculando()
      time.sleep(1)
      print('Pronto       ')
-
+     
      try:
-       total = número ** (1/2)
+       
+       total = Decimal(número) ** Decimal((1/2))
        print(str(qouc) + str(número) + ' =', str(total))
      except ValueError as err:
        print(colors.FAIL + 'Algo deu muito errado, o erro foi: ', err)
@@ -236,7 +237,8 @@ if escolha == '12':
 
       
      try: 
-       total = número ** (1/3)
+
+       total = Decimal(número) ** Decimal((1/3))
        print(str(qouc) + str(número) + ' =', str(total))
      except ValueError as err:
        print(colors.FAIL + 'Algo deu muito errado, o erro foi: ', err)
