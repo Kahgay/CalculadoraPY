@@ -16,7 +16,7 @@ python3 calc.py
 sudo apt-get install python3
 sudo apt-get install git
 sudo apt-get install python3-pip
-sudo pip install termcolor
+sudo pip3 install termcolor
 git clone https://github.com/Kahgay/CalculadoraPY.git
 cd CalculadoraPY
 python3 calc.py
