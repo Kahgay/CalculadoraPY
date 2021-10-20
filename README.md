@@ -24,4 +24,4 @@ python3 calc.py
 
 **Porque tem [ON] ou [OFF] do lado das opções?**
 
-É uma forma de dizer que está funcionando ou não, em breve mudarei para "funcionando" e "não funcionando"
+É uma forma de dizer que está funcionando ou não, em breve mudarei para "funcionando", "ainda não funcionando" e "não funcionando"
