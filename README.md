@@ -5,6 +5,7 @@
 ```
 apt install python3
 apt install git
+pip3 install termcolor
 git clone https://github.com/Kahgay/CalculadoraPY.git
 cd CalculadoraPY
 python3 calc.py
