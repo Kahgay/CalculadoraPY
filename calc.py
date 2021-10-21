@@ -711,4 +711,4 @@ if escolha == '16':
       
      print(quantidade1 + comprimentos, 'para', comprimentos2, '=', str(total) + str(comprimentos))
 if escolha == 'wiki':
-  cprint('WIKI: \n\nConversor de medidas\nSobre a questão da vírgula eu não sei fazer isso em python ainda, mas a vírgula pela quantidade de casas depois da vírgula, exemplo: 190.5 -> 19,50\n\nPotência\n número elevado a tal número será multiplicado o número que colocou vezes número da potência, exemplo: 3^(5) = 3 x 3 = 9 x 3 = 27 x 3 = 81 x 3 = 243\n\n', 'white', attrs=['bold'])
+  cprint('WIKI: \n\nConversor de medidas\nSobre a questão da vírgula eu não sei fazer isso em python ainda, mas a vírgula pela quantidade de casas depois da vírgula, exemplo: 190.5 -> 19,50\n\nPotência\nIndica a multiplicação da base a por ela mesma tantas vezes quanto indicar o expoente, exemplo: 3^(5) = 3 x 3 = 9 x 3 = 27 x 3 = 81 x 3 = 243\n\n', 'white', attrs=['bold'])
